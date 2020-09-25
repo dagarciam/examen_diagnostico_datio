@@ -1,4 +1,4 @@
-package exercises
+package com.minsait.ttaa.exercises
 
 import org.apache.spark.sql.SparkSession
 
