@@ -6,8 +6,11 @@ Crear una rama que por nombre lleve tus iniciales
 Realizar los ejercicios solicitados abajo
 Realizar un Pull Request a la rama solution desde la rama en que haz realizado los ejercicios
 
-Para nivel Semi-Sr realizar ejercicios 1 y 2
-Para nivel Sr realizar ejercicio 3 también
+_Para nivel Jr realizar ejercicio 1_
+
+_Para nivel Semi-Sr realizar ejercicios 1 y 2_
+
+_Para nivel Sr realizar ejercicio 1, 2 y 3_
 
 ## Ejercicio 1
 Dados los archivos contenidos en la carpeta comis
