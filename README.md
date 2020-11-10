@@ -17,7 +17,7 @@ Dado el archivo PokemonData.csv, leerlo como DataFrame (se recomienda el uso de 
 ## Ejercicio 2
 Dado el archivo players_20.csvn nuestro coach Ramón necesita saber 
 1. Cuales son los 20 jugadores de menos de 23 años que tienen más potencial
-2. Cuales son los equiois top 20 con el promedio (overall) más alto
+2. Cuales son los equipos top 20 con el promedio (overall) más alto
 3. De los 20 equipos anteriores nuestro coach también quiere saber cuáles son los 3 porteros y los 3 delanteros con mejor (overall)
 4. Rankear a los jugadores por nacionalidad de tal forma que identifiquemos a los 5 mejores de cada país. 
 
