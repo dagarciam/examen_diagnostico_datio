@@ -6,6 +6,11 @@ Crear una rama que por nombre lleve tus iniciales
 Realizar los ejercicios solicitados abajo
 Realizar un Pull Request a la rama solution desde la rama en que haz realizado los ejercicios
 
+_Para nivel Jr realizar ejercicio 1_
+
+_Para nivel Semi-Sr realizar ejercicios 1 y 2_
+
+_Para nivel Sr realizar ejercicio 1, 2 y 3_
 
 ## Ejercicio 1
 Dados los archivos contenidos en la carpeta comis
@@ -21,8 +26,7 @@ Dado el archivo players_20.csvn nuestro coach Ramón necesita saber
 ## Ejercicio 3
 
 Dado el archivo PokemonData.csv, leerlo como DataFrame (se recomienda el uso de RDDs para la lectura inicial)
-1. Obtener el promedio de ataque(attack) y defensa(defense) agrupando por tipo de pokemon (type1) y generación (generation)
-2. Filtrando por los tipos de pokemon(type1) fire y water es necesario calcular el promedio de cada una de las siguientes columnas: 
+1. Filtrando por los tipos de pokemon(type1) fire y water es necesario calcular el promedio de cada una de las siguientes columnas: 
     sp_attack, sp_defense y speed; de tal forma que el dataframe resultante muestre los siguientes datos:
     generation, avg_sp_attack_water, avg_sp_attack_fire, avg_sp_defense_water, avg_sp_defense_fire, avg_speed_water, avg_speed_fire
 
