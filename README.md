@@ -6,13 +6,10 @@ Crear una rama que por nombre lleve tus iniciales
 Realizar los ejercicios solicitados abajo
 Realizar un Pull Request a la rama solution desde la rama en que haz realizado los ejercicios
 
-## Ejercicio 1
 
-Dado el archivo PokemonData.csv, leerlo como DataFrame (se recomienda el uso de RDDs para la lectura inicial)
-1. Obtener el promedio de ataque(attack) y defensa(defense) agrupando por tipo de pokemon (type1) y generación (generation)
-2. Filtrando por los tipos de pokemon(type1) fire y water es necesario calcular el promedio de cada una de las siguientes columnas: 
-    sp_attack, sp_defense y speed; de tal forma que el dataframe resultante muestre los siguientes datos:
-    generation, avg_sp_attack_water, avg_sp_attack_fire, avg_sp_defense_water, avg_sp_defense_fire, avg_speed_water, avg_speed_fire
+## Ejercicio 1
+Dados los archivos contenidos en la carpeta comis
+1. Al Dataframe que contiene los nombres de comics queremos agregar una columna que contenga los personajes a forma de array
     
 ## Ejercicio 2
 Dado el archivo players_20.csvn nuestro coach Ramón necesita saber 
@@ -22,8 +19,12 @@ Dado el archivo players_20.csvn nuestro coach Ramón necesita saber
 4. Rankear a los jugadores por nacionalidad de tal forma que identifiquemos a los 5 mejores de cada país. 
 
 ## Ejercicio 3
-Dados los archivos contenidos en la carpeta comis
-1. Al Dataframe que contiene los nombres de comics queremos agregar una columna que contenga los personajes a forma de array
+
+Dado el archivo PokemonData.csv, leerlo como DataFrame (se recomienda el uso de RDDs para la lectura inicial)
+1. Obtener el promedio de ataque(attack) y defensa(defense) agrupando por tipo de pokemon (type1) y generación (generation)
+2. Filtrando por los tipos de pokemon(type1) fire y water es necesario calcular el promedio de cada una de las siguientes columnas: 
+    sp_attack, sp_defense y speed; de tal forma que el dataframe resultante muestre los siguientes datos:
+    generation, avg_sp_attack_water, avg_sp_attack_fire, avg_sp_defense_water, avg_sp_defense_fire, avg_speed_water, avg_speed_fire
 
 
 ### Resultados
