@@ -2,8 +2,11 @@
 
 ## Instrucciones
 Realizar un fork de este repositorio a tu cuenta de github
+
 Crear una rama que por nombre lleve tus iniciales
+
 Realizar los ejercicios solicitados abajo
+
 Realizar un Pull Request a la rama solution desde la rama en que haz realizado los ejercicios
 
 _Para nivel Jr realizar ejercicio 1_
