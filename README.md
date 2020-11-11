@@ -13,7 +13,7 @@ _Para nivel Semi-Sr realizar ejercicios 1 y 2_
 _Para nivel Sr realizar ejercicio 1, 2 y 3_
 
 ## Ejercicio 1
-Dados los archivos contenidos en la carpeta comis
+Dados los archivos contenidos en la carpeta comics
 1. Al Dataframe que contiene los nombres de comics queremos agregar una columna que contenga los personajes a forma de array
     
 ## Ejercicio 2
