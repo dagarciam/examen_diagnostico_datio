@@ -1,0 +1,10 @@
+Buen día, te comparto el resultado solicitado para cada uno de los ejercicios.
+
+Ejercicio 1
+https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3474046444187822/3736723392708681/8546714949776172/latest.html
+
+Ejercicio 2
+https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3474046444187822/2986153743579234/8546714949776172/latest.html
+
+Ejercicio 3
+https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3474046444187822/2986153743579236/8546714949776172/latest.html
