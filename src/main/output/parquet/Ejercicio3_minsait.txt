@@ -1,0 +1,12 @@
+val pokemon = spark.read.format("csv")
+  .option("header", "true")
+  .option("inferSchema", "true")
+  .load("dbfs:/FileStore/shared_uploads/0234446@up.edu.mx/PokemonData.txt")
+
+display(pokemon)
+
+pokemon.createOrReplaceTempView("pokemon")
+
+val preg3_1 = spark.sql("select  pf.generation, pw.avg_sp_attack_water,  avg(pf.sp_attack) as avg_sp_attack_fire , pw.avg_sp_defense_water,avg(pf.sp_defense) as avg_sp_defense_fire, pw.avg_speed_water,avg(pf.speed) as avg_speed_fire from pokemon pf left join (select  p.generation, avg(p.sp_attack) as avg_sp_attack_water , avg(p.sp_defense) as avg_sp_defense_water, avg(p.speed) as avg_speed_water from pokemon p where p.type1 = 'water' group by p.generation)  pw on (pf.generation = pw.generation) where pf.type1 = 'fire' group by pf.generation , pw.avg_sp_attack_water, pw.avg_sp_defense_water, pw.avg_speed_water order by 1")
+display(preg3_1)
+preg3_1.createOrReplaceTempView("poke_type")
