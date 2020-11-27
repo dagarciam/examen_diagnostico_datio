@@ -1,11 +1,15 @@
 import constants.Constants
 import exercises.Exercises
+import org.apache.log4j._
 import org.apache.spark.sql.SparkSession
 
 object Examen {
   def main(args: Array[String]): Unit = {
 
     println(Constants.MESSAGE)
+
+    // Set log level to ERROR
+    Logger.getLogger("org").setLevel(Level.ERROR)
 
     // Spark session
     val spark = SparkSession
@@ -15,8 +19,11 @@ object Examen {
       .getOrCreate()
 
     // Instantiate examen
+    import spark.implicits._
     val examen = new Exercises(spark)
 
+    // Run exercise 1
+    examen.ejercicio1
 
     // Stop Spark
     spark.stop()
