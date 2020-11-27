@@ -1,7 +1,7 @@
 package exercises
 
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions as F
+import org.apache.spark.sql._
+import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.Window
 
 class Exercises(spark: SparkSession) 
@@ -10,14 +10,24 @@ class Exercises(spark: SparkSession)
   //Al Dataframe que contiene los nombres de comics queremos agregar una columna que contenga los personajes a forma de array
   
   //leemos los csv para colocarlos en data frames
-  val df_comics=spark.read.csv("src/main/resources/input/csv/comics/comics.csv",header="true")
-  val df_characters_to_comics=spark.read.csv("src/main/resources/input/csv/comics/charactersToComics.csv",header="true")
-  val df_characters=spark.read.csv("src/main/resources/input/csv/comics/characters.csv",header="true")
+  val df_comics = spark
+    .read
+    .option("header","true")
+    .csv("src/main/resources/input/csv/comics/comics.csv")
+  val df_characters_to_comics = spark
+    .read
+    .option("header","true")
+    .csv("src/main/resources/input/csv/comics/charactersToComics.csv")
+  val df_characters = spark
+    .read
+    .option("header","true")
+    .csv("src/main/resources/input/csv/comics/characters.csv")
   
   //hacemos join a characters_to_comics de characters para sacar sus nombres
   //var df = df_characters_to_comics.join(df_characters,df_characters_to_comics("characterID") ===  df_characters("characterID"),"leftouter").show(false)
-  var comics_characters=df_characters_to_comics.join(df_characters,"characterID","leftouter")
-  
+  var comics_characters = df_characters_to_comics
+    .join(df_characters, "characterID", "leftouter")
+
   //ya que tenemos el dataframe comics_characters hacemos la función de agregación para obtener la lista de personajes por comics
   var agg_comics_chars = comics_characters.groupBy("comicID").agg(collect_list("name"))
   
@@ -80,7 +90,7 @@ ejercicio2.write.parquet("Ejercicio_2_1.parquet")
                      
 //Cuales son los equipos top 20 con el promedio (overall) más alto                     
 // primero vamos a agrupar la información por clubes y por promedio del promedio de jugadores
-var agg_equipos = df_players.groupBy("club").agg(F.avg("overall"))                    
+var agg_equipos = df_players.groupBy("club").agg(avg("overall"))
 
 //ahora hacemos la consulta del top 20 por promedios                     
 agg_equipos.select(agg_equipos("club"),agg_equipos("avg(overall)").orderBy(agg_equipos("avg(overall)"),ascending=False).limit(20).show()                     
@@ -149,7 +159,7 @@ ejecricio_2_3_delanteros.write.parquet("ejecricio_2_3_delanteros.parquet")
                    
  //Rankear a los jugadores por nacionalidad de tal forma que identifiquemos a los 5 mejores de cada país.     
   window = Window.partitionBy(df_players['nationality']).orderBy(df_players['overall'].desc())
-  val ejercicio_2_4= df_players.select(df_players["nationality"],df_players["sofifa_id"],df_players["overall"],df_players["short_name"],df_players["long_name"], F.rank().over(window).alias('rank')) .filter(F.col('rank') <= 6) .show()               
+  val ejercicio_2_4= df_players.select(df_players["nationality"],df_players["sofifa_id"],df_players["overall"],df_players["short_name"],df_players["long_name"], rank().over(window).alias('rank')) .filter(col('rank') <= 6) .show()
                    
                    
  
@@ -172,7 +182,7 @@ ejecricio_2_3_delanteros.write.parquet("ejecricio_2_3_delanteros.parquet")
    val df_pokemones_agua=df_pokemones.select(df_pokemones_agua("generation"),df_pokemones_agua("sp_attack"),df_pokemones_agua("sp_defense"),df_pokemones_agua("speed")).filter(df_pokemones("type1")=="water")
                    
    //calculamos los promedios de sp_attack, sp_defense y speed por generación para ambos dataframe                
-    val df_pokemones_fuego_promedios= df_pokemones_fuego.groupBy("generation").agg(F.avg("sp_attack") ,F.avg("sp_defense"),F.avg("speed"))
+    val df_pokemones_fuego_promedios= df_pokemones_fuego.groupBy("generation").agg(avg("sp_attack") ,avg("sp_defense"),avg("speed"))
     val df_pokemones_fuego_final=df_pokemones_fuego_promedios.withColumnRenamed("avg(sp_attack)", "avg_sp_attack_fire").withColumnRenamed("avg(sp_defense)", "avg_sp_defense_fire").withColumnRenamed("avg(speed)", "avg_speed_fire")               
       
 //     +----------+------------------+-------------------+------------------+
@@ -187,7 +197,7 @@ ejecricio_2_3_delanteros.write.parquet("ejecricio_2_3_delanteros.parquet")
 //|         7|              81.8|               67.0|              69.8|
 //+----------+------------------+-------------------+------------------+              
                                 
-    val df_pokemones_agua_promedios= df_pokemones_agua.groupBy("generation").agg(F.avg("sp_attack") ,F.avg("sp_defense"),F.avg("speed"))
+    val df_pokemones_agua_promedios= df_pokemones_agua.groupBy("generation").agg(avg("sp_attack") ,avg("sp_defense"),avg("speed"))
     val df_pokemones_agua_final=df_pokemones_agua_promedios.withColumnRenamed("avg(sp_attack)", "avg_sp_attack_water").withColumnRenamed("avg(sp_defense)", "avg_sp_defense_water").withColumnRenamed("avg(speed)", "avg_speed_water")             
 // +----------+-------------------+--------------------+------------------+
 //|generation|avg_sp_attack_water|avg_sp_defense_water|   avg_speed_water|
