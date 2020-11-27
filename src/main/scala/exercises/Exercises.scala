@@ -72,13 +72,13 @@ class Exercises(spark: SparkSession) {
     // Top 20 teams with best overall
     var df_top_20_teams = df_players
       .groupBy(df_players("club"))
-      .agg(avg(df_players("overall")).as("avg_overall"))
+      .agg(avg("overall").as("avg_overall"))
 
     df_top_20_teams = df_top_20_teams
       .sort(df_top_20_teams("avg_overall").desc)
       .select(
-        df_players("club"),
-        df_players("avg_overall")
+        df_top_20_teams("club"),
+        df_top_20_teams("avg_overall")
       )
       .limit(20)
 
