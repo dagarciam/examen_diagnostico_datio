@@ -37,11 +37,8 @@ class Exercises(spark: SparkSession) {
     // Show final schema
     final_comics.printSchema()
 
-    // Show head
-    final_comics.collect().take(10).foreach(println)
-
     // Write output
-    final_comics.write.parquet("Ejercicio_1.parquet")
+    final_comics.write.parquet("src/main/output/ex_1.parquet")
   }
 
   
