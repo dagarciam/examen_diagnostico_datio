@@ -25,6 +25,9 @@ object Examen {
     // Run exercise 1
     examen.ejercicio1
 
+    // Run exercise 2
+    examen.ejercicio2
+
     // Stop Spark
     spark.stop()
   }
