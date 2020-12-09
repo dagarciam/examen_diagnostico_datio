@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/examen_diagnostico_datio.iml" filepath="$PROJECT_DIR$/.idea/modules/examen_diagnostico_datio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/examen_diagnostico_datio.iml" filepath="$PROJECT_DIR$/.idea/examen_diagnostico_datio.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/examen_diagnostico_datio-build.iml" filepath="$PROJECT_DIR$/.idea/modules/examen_diagnostico_datio-build.iml" />
     </modules>
   </component>
