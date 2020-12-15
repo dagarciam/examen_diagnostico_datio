@@ -2,6 +2,7 @@ import constants.Constants
 
 object Examen {
   def main(args: Array[String]): Unit = {
+    val spark = SparkSession.builder.master("local[*]").appName("Ejercicio1").getOrCreate()
     val comics = spark.sparkContext.textFile("file:///home/bashroot/Proyectos/examen_diagnostico_datio/src/main/resources/input/csv/comics/comics.csv")
     val bitacora_comic_con_personaje = spark.sparkContext.textFile("file:///home/bashroot/Proyectos/examen_diagnostico_datio/src/main/resources/input/csv/comics/charactersToComics.csv").filter(x => sonDigitos(x.split(",")(0))).map(x => (x.split(",")(1), x ) )
     val personajes = spark.sparkContext.textFile("file:///home/bashroot/Proyectos/examen_diagnostico_datio/src/main/resources/input/csv/comics/characters.csv").filter(x => sonDigitos(x.split(",")(0))).map(x => (x.split(",")(0), x ) )
