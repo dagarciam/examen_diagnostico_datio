@@ -1,0 +1,4 @@
+[debug] "not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/Users/msuarezc/OneDrive%20-%20UCSM/Trabajo/Indra/examen_diagnostico_datio/"), "examen_diagnostico_datio")...
+[debug] Done updating ProjectRef(uri("file:/Users/msuarezc/OneDrive%20-%20UCSM/Trabajo/Indra/examen_diagnostico_datio/"), "examen_diagnostico_datio")
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
