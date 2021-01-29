@@ -100,7 +100,7 @@ class Exercises(spark: SparkSession) {
   rangNat.write.parquet("src/main/output/parquet/rankNacionalidad.parquet")
 
 
-  //Ex3
+  //Ex3 Pokemon
 
   
 val dfpokemon2 = spark.read.csv("src/main/resources/input/csv/pokemon/PokemonData.csv")
