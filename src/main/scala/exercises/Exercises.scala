@@ -103,5 +103,48 @@ class Exercises(spark: SparkSession) {
   //Ex3
 
   
+val dfpokemon2 = spark.read.csv("src/main/resources/input/csv/pokemon/PokemonData.csv")
 
+
+
+
+
+val pokemonAgua = dfpokemon2.filter("type1 = 'water'")
+val pokemonAguaAvg = pokemonAgua.groupBy("type1","generation").
+    agg( 
+    avg($"sp_attack").as("avg_sp_attack_water"), 
+    avg($"sp_defense").as("avg_sp_defense_water"), 
+    avg($"speed").as("avg_speed_water"))
+
+
+val litFire = pokemonAguaAvg.withColumn("avg_sp_attack_fire", lit(0)).withColumn("avg_sp_defense_fire", lit(0)).withColumn("avg_speed_fire", lit(0))
+
+
+
+//fire
+val pokemonFuego = dfpokemon2.filter("type1 = 'fire'")
+val pokemonFuegoAvg = pokemonAgua.groupBy("type1","generation").
+    agg( 
+    avg($"sp_attack").as("avg_sp_attack_fire"), 
+    avg($"sp_defense").as("avg_sp_defense_fire"), 
+    avg($"speed").as("avg_speed_fire"))
+
+
+val litAgua = pokemonFuegoAvg.withColumn("avg_sp_attack_water", lit(0)).withColumn("avg_sp_defense_water", lit(0)).withColumn("avg_speed_water", lit(0))
+
+
+val selectPokemonAgua = litAgua.select(col("type1"),col("generation"),
+col("avg_sp_attack_water"),col("avg_sp_defense_water"),col("avg_speed_water"),
+col("avg_sp_attack_fire").cast("integer"),col("avg_sp_defense_fire").cast("integer"),col("avg_speed_fire").cast("integer"))
+
+
+val selectPokemonFire = litFire.select(col("type1"),col("generation"),
+col("avg_sp_attack_water").cast("integer"),col("avg_sp_defense_water").cast("integer"),col("avg_speed_water").cast("integer"),
+col("avg_sp_attack_fire"),col("avg_sp_defense_fire"),col("avg_speed_fire"))
+
+
+val pokemonAns = selectPokemonAgua.union(selectPokemonFire).distinct()
+
+
+pokemonAns.write.parquet("src/main/output/parquet/pokemon.parquet")
 }
