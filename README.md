@@ -14,7 +14,7 @@ Nuestra area de QA está traumada con el uso de withColumn, por favor reemplace 
 * El uso de cadenas en las clases que implementan la lógica de solución están muy mal vistos por nuestra area de QA, sea cuidadoso.
 * Todos los métodos deben contener comentarios en estilo ScalaDoc.
 * Amamos las pruebas de calidad, la implementación de pruebas unitarias al 30% de los métodos implementados nos hará muy felices.
-
+* Modularice sú código lo suficiente de tal forma que cada método haga una sola cosa.
 
 ## Ejercicio 1
 Dados los archivos contenidos en la carpeta comics
