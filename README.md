@@ -7,13 +7,13 @@
     Realizar un Pull Request a la rama solution desde la rama en que haz realizado los ejercicios
 
 ¿Qué evaluaremos?
-Haz uso de todos los recursos de POO qué estén a tu alcance, Herencia, Polimorfismo, Encapsulamiento, Clases abstractas, Traits, etc.
-Minimiza todo lo posible el shuffling.
-Nuestra area de QA está traumada con el uso de withColumn, por favor reemplace el uso de este método con su imaginación.
-El uso de sentencias SQL queda estrictamente prohibido.
-El uso de cadenas en las clases que implementan la lógica de solución están muy mal vistos por nuestra area de QA, sea cuidadoso.
-Todos los métodos deben contener comentarios en estilo ScalaDoc.
-Amamos las pruebas de calidad, la implementación de pruebas unitarias al 30% de los métodos implementados nos hará muy felices.
+    Haz uso de todos los recursos de POO qué estén a tu alcance, Herencia, Polimorfismo, Encapsulamiento, Clases abstractas, Traits, etc.
+    Minimiza todo lo posible el shuffling. 
+    Nuestra area de QA está traumada con el uso de withColumn, por favor reemplace el uso de este método con su imaginación. 
+    El uso de sentencias SQL queda estrictamente prohibido.
+    El uso de cadenas en las clases que implementan la lógica de solución están muy mal vistos por nuestra area de QA, sea cuidadoso.
+    Todos los métodos deben contener comentarios en estilo ScalaDoc.
+    Amamos las pruebas de calidad, la implementación de pruebas unitarias al 30% de los métodos implementados nos hará muy felices.
 
 
 ## Ejercicio 1
