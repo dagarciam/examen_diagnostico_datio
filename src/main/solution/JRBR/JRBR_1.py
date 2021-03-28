@@ -8,8 +8,7 @@ from pyspark.sql.functions import collect_set
 sc=SparkContext.getOrCreate()
 spark = HiveContext(sc)
 
-\examen_diagnostico_datio\src\main\resources\input\csv\comics
-
+##Carga el archivo y retorna dataframe
 def loadFile(file,columnOne,columnTwo):
 	rdd = sc.textFile("/examen_diagnostico_datio/src/main/resources/input/csv/comics/" + str(file))
 	rdd = rdd.map(lambda row: row.split(","))
@@ -19,7 +18,7 @@ def loadFile(file,columnOne,columnTwo):
 	df.columnOne.alias(columnOne),
 	df.columnTwo.alias(columnTwo))
 	return df
-	
+##cruce de informacion y se aplica regla con 	collect_set
 def aJoinB(df1,df2):
 	cond_join = [ df1.characterID == df2.characterID]
 	df3=df1.join(df2, cond_join , "left").select(
@@ -34,7 +33,7 @@ def aJoinB(df1,df2):
 def main():
 	df_charactersToComics=loadFile("charactersToComics.csv","comicID","characterID")
 	df_characters=loadFile("characters.csv","characterID","name")	
-	aJoinB(rdd_characters,rdd_charactersToComics)
+	aJoinB(df_characters,df_charactersToComics)
 	
 if __name__== "__main__":
     main()
