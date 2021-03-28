@@ -1,6 +1,7 @@
 # Examen Técnico Spark
 
 ## Instrucciones
+<<<<<<< HEAD
 1. Realizar un fork de este repositorio a tu cuenta de github
 2. Crear una rama que por nombre lleve tus iniciales
 3. Realizar los ejercicios solicitados abajo
@@ -15,6 +16,33 @@ Nuestra area de QA está traumada con el uso de withColumn, por favor reemplace 
 * Todos los métodos deben contener comentarios en estilo ScalaDoc.
 * Amamos las pruebas de calidad, la implementación de pruebas unitarias al 30% de los métodos implementados nos hará muy felices.
 * Modularice sú código lo suficiente de tal forma que cada método haga una sola cosa.
+||||||| c63207d
+    Realizar un fork de este repositorio a tu cuenta de github
+    Crear una rama que por nombre lleve tus iniciales
+    Realizar los ejercicios solicitados abajo
+    Realizar un Pull Request a la rama solution desde la rama en que haz realizado los ejercicios
+
+_Para nivel Jr realizar ejercicio 1_
+
+_Para nivel Semi-Sr realizar ejercicios 1 y 2_
+
+_Para nivel Sr realizar ejercicio 1, 2 y 3_
+=======
+1. Realizar un fork de este repositorio a tu cuenta de github
+2. Crear una rama que por nombre lleve tus iniciales
+3. Realizar los ejercicios solicitados abajo
+4. Realizar un Pull Request a la rama solution desde la rama en que haz realizado los ejercicios
+
+## ¿Qué evaluaremos?
+* Haz uso de todos los recursos de POO qué estén a tu alcance, Herencia, Polimorfismo, Encapsulamiento, Clases abstractas, Traits, etc.
+* Minimiza todo lo posible el shuffling.
+  Nuestra area de QA está traumada con el uso de withColumn, por favor reemplace el uso de este método con su imaginación.
+* El uso de sentencias SQL queda estrictamente prohibido.
+* El uso de cadenas en las clases que implementan la lógica de solución están muy mal vistos por nuestra area de QA, sea cuidadoso.
+* Todos los métodos deben contener comentarios en estilo ScalaDoc.
+* Amamos las pruebas de calidad, la implementación de pruebas unitarias al 30% de los métodos implementados nos hará muy felices.
+* Modularice sú código lo suficiente de tal forma que cada método haga una sola cosa.
+>>>>>>> 71de2d5d9c856ef3f6389bccc950e991ac1a3147
 
 ## Ejercicio 1
 Dados los archivos contenidos en la carpeta comics
