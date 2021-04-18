@@ -1,3 +1,7 @@
 *.class
 *.log
-/.idea/
+.idea/
+.idea/*
+.bsp/*
+project/*
+target/*
