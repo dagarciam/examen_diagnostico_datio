@@ -98,4 +98,17 @@ class Exercises(spark: SparkSession) {
     result.write.mode(SaveMode.Overwrite).parquet("src/main/output/parquet/e2")
     result.show(false)
   }
+  def exercise03(): Unit = {
+    val pokemonFile = "src/main/resources/input/csv/pokemon/PokemonData.csv"
+    val pokemonCSV = new FileReader(FileStrategy(pokemonFile))
+    val pokemonData = pokemonCSV.read(pokemonFile).getOrElse(spark.emptyDataFrame)
+      .persist(StorageLevel.MEMORY_ONLY_2)
+      .as("players_20")
+    pokemonData.printSchema()
+    pokemonData.filter(col("type1") === "fire" || col("type1") === "water").groupBy("generation", "type1").agg(
+      avg("sp_attack").alias("avg_sp_attack"),
+      avg("sp_defense").alias("avg_sp_defense"),
+      avg("speed").alias("avg_speed")
+    ).write.mode(SaveMode.Overwrite).parquet("src/main/output/parquet/e3")
+  }
 }
