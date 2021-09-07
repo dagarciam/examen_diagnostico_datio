@@ -23,7 +23,7 @@ Dados los archivos contenidos en la carpeta comics
 Escriba el dataframe resultante en la carpeta src/main/output/parquet/e1 en formato parquet
 
 ## Ejercicio 2
-Dado el archivo players_20.csvn nuestro coach Ramón necesita saber
+Dado el archivo players_20.csv nuestro coach Ramón necesita saber
 1. Agregar una columna top_20_under_23 de tipo BooleanType que contenga TRUE para los 20 jugadores de menos de 23 años que tienen más potencial y FALSE para el resto.
 2. Agregar una columna top_15_by_nationality de typo BooleanType que contenga true si el jugador es uno de los mejores jugadores de su país (basados en la columna overall).
 3. Agregar una columna qué contenga el promedio del IMC por cada nacionalidad
